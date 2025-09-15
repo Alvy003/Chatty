@@ -7,9 +7,11 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "node run start --prefix backend"
-  },
+  "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+  "start": "npm run start --prefix backend",
+  "dev": "npm run dev --prefix backend"
+}
+,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Alvy003/Chatty.git"
