@@ -11,6 +11,7 @@ const app = express();
 const __dirname = path.resolve();
 
 const PORT = process.env.PORT || 3000;
+const HOST = "0.0.0.0";
 
 console.log(process.env.PORT);
 
@@ -27,4 +28,6 @@ app.get("*", (_ , res) => {
 });
 }
 
-app.listen(3000, () =>  console.log('Server running on port:', + PORT));
+app.listen(PORT, HOST, () => {
+    console.log(`Server running on port: ${PORT}`);
+});
