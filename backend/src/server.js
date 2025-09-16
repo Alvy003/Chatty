@@ -4,6 +4,7 @@ import path from 'path';
 
 import authRoutes from './routes/auth.route.js';
 import messageRoutes from './routes/message.route.js';
+import { connectDB } from './lib/db.js';
 
 dotenv.config();
 
@@ -12,6 +13,8 @@ const __dirname = path.resolve();
 
 const PORT = process.env.PORT || 3000;
 const HOST = "0.0.0.0";
+
+app.use(express.json());
 
 console.log(process.env.PORT);
 
@@ -30,4 +33,5 @@ app.get("*", (_ , res) => {
 
 app.listen(PORT, HOST, () => {
     console.log(`Server running on port: ${PORT}`);
+    connectDB();
 });
